@@ -6,4 +6,14 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   has_many :stories
+
+  def to_s
+    name    
+  end
+
+  def is_admin?
+    admin
+  end
+  
+  
 end
