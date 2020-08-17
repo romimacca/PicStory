@@ -27,9 +27,12 @@
       <br>
       <div class="row">
         <div class="col-md-8"></div>
+        <% if user_signed_in? && (@story.user_id == current_user.id || current_user.is_admin? )%>
         <div class="col-md-2">
-          <p><%= link_to 'Edit', edit_story_path(@story), class: "btn btn-warning btn-sm" %> <%= link_to 'Back', stories_path, class: "btn btn-info btn-sm" %></p>
+            <p><%= link_to 'Edit', edit_story_path(@story), class: "btn btn-warning btn-sm" %> 
+            <%= link_to 'Back', stories_path, class: "btn btn-info btn-sm" %></p>
         </div>
+        <% end %>
         <div class="col-md-2"></div>
       </div>
 
